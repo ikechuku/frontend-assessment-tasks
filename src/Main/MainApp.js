@@ -20,8 +20,10 @@ export default class MainApp extends Component {
             <strong className="underline">Instructions</strong>
             <p>
               {" "}
-              click and hold to select a landmark <br /> Drag to desired
-              location and double-click to drop
+              Click hold and release to select a landmark <br /> Drag to desired
+              location and click again to place the landmark
+              <br />
+              refresh the page to reset the landmarks to their default positions
             </p>
           </div>
 
