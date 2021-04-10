@@ -1,36 +1,45 @@
 import React, { Component } from "react";
-import Dialog from "../Components/Dialog";
+import Dialog from "../Components/Mosque";
+import School from "../Components/School";
+import Church from "../Components/Church";
+import Factory from "../Components/Factory";
 
 export default class MainApp extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      showDialog: false,
-    };
   }
-
-  _showDialog() {
-    this.setState({ showDialog: !this.state.showDialog });
-  }
-
   render() {
     return (
-      <div
-        style={{
-          backgroundImage: `url("")`,
-        }}
-      >
+      <div>
+        <div className="overlay"></div>
         <div className="MainApp">
-          <div className="Title">Example Dialog Popper</div>
-          <div className="button" onClick={this._showDialog.bind(this)}>
-            {" "}
-            Show Dialog{" "}
+          <div className="text-white text-4xl py-2 text-base font-bold">
+            Map of Bangladesh
           </div>
-          <Dialog
-            onClose={this._showDialog.bind(this)}
-            show={this.state.showDialog}
-          />
+          <div className="absolute text-gray-600 m-10">
+            <strong className="underline">Instructions</strong>
+            <p>
+              {" "}
+              click and hold to select a landmark <br /> Drag to desired
+              location and double-click to drop
+            </p>
+          </div>
+
+          {/* <div className="img-container">
+            <img src={map} width="100%" height="auto" alt="map of bangladesh" srcset=""/>
+         </div> */}
+          <div className="white">
+            <div
+              style={{
+                backgroundImage: `url("https://res.cloudinary.com/techknight/image/upload/v1618016217/mao_e86qvn.png")`,
+              }}
+              className="map"
+            ></div>
+          </div>
+          <Dialog />
+          <School />
+          <Factory />
+          <Church />
         </div>
       </div>
     );

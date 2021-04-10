@@ -1,39 +1,65 @@
-.Dialog {
-    width: 100px;
-    height: 200px;
-    background-color: lightblue;
-    border-radius: 10px;
-    border: 3px solid grey;
-    position: absolute;
-    cursor: move;
-    top: 150px;
-    left: 520px;
+.Mosque {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  cursor: move;
+  top: 86%;
+  bottom: 0px;
+  left: 20%;
+  animation: bounce 1.5s infinite;
+  -webkit-animation: bounce 1.5s infinite;
+  -moz-animation: bounce 1.5s infinite;
+  -o-animation: bounce 1.5s infinite;
 }
-
-.hidden {
-    /* display: none; */
+.Mosque:hover {
+  transform: scale(1.5);
+  transition: transform 0.5s ease;
 }
-
-.DialogTitle {
-    font-weight: bold;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid grey;
+.Church {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  cursor: move;
+  top: 86%;
+  left: 30%;
+  animation: bounce 1.5s infinite;
+  -webkit-animation: bounce 1.5s infinite;
+  -moz-animation: bounce 1.5s infinite;
+  -o-animation: bounce 1.5s infinite;
 }
-
-.Contents {
-    padding-top: 50px;
-    padding-bottom: 200px;
+.Church:hover {
+  transform: scale(1.5);
+  transition: transform 1.5s ease;
 }
-
-.closeButton {
-    font-size: 12px;
-    width: 100px;
-    color: black;
-    border: 2px solid black;
-    border-radius: 25px;
-    padding: 10px;
-    margin: 10px;
-    margin-left: 140px;
-    cursor: pointer;
+.School {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  cursor: move;
+  top: 86%;
+  left: 40%;
+  animation: bounce 1.5s infinite;
+  -webkit-animation: bounce 1.5s infinite;
+  -moz-animation: bounce 1.5s infinite;
+  -o-animation: bounce 1.5s infinite;
+}
+.School:hover {
+  transform: scale(1.5);
+  transition: transform 0.5s ease;
+}
+.Factory {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  cursor: move;
+  top: 86%;
+  left: 50%;
+  animation: bounce 1.5s infinite;
+  -webkit-animation: bounce 1.5s infinite;
+  -moz-animation: bounce 1.5s infinite;
+  -o-animation: bounce 1.5s infinite;
+}
+.Factory:hover {
+  transform: scale(1.5);
+  transition: transform 0.5s ease;
 }
