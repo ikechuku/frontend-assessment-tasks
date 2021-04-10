@@ -5,14 +5,14 @@ const MainApp = () => {
     <div>
       <div className="overlay"></div>
       <div className="MainApp">
-        <div className="text-gray-300 text-4xl py-2 text-base font-semi-bold">
+        <div className="text-gray-300 text-4xl pt-20 text-base font-semi-bold animate-bounce">
           Ramadan Countdown Banner
         </div>
         <div className="h-screen container flex my-40 justify-center">
           <h3 className="mx-20 mt-20 text-gray-400 font-semibold">
             Count down to next Sehri
           </h3>
-          <div className="banner p-5">
+          <div className="banner p-5 rounded-lg hover:opacity-75 ">
             <div>
               <h1 className="text-white text-4xl animate-pulse">
                 <Timer />
