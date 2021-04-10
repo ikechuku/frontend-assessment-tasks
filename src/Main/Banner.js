@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const MainApp = () => {
+const MainApp = ({ seconds }) => {
   return (
     <div>
       <div className="overlay"></div>
@@ -12,7 +12,7 @@ const MainApp = () => {
           <h3 className="mx-20">Banner</h3>
           <div className="banner">
             <div>
-              <h1 className="text-white text-2xl">
+              <h1 className="text-white text-4xl">
                 <Timer seconds={3000000} />
                 left
               </h1>
@@ -25,43 +25,48 @@ const MainApp = () => {
 };
 
 export default MainApp;
-const Timer = ({ seconds }) => {
-  // initialize timeLeft with the seconds prop
-  const [timeLeft, setTimeLeft] = useState(seconds);
 
-  const displayTimeLeft = (seconds) => {
-    let hoursLeft = Math.floor(
-      (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+const Timer = ({ fastDate }) => {
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [mins, setMins] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
+  let countDownDate = fastDate || new Date("Jul 7, 2021 15:37:25").getTime();
+
+  var countdownfunction = setInterval(function () {
+    // Get todays date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
-    let minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    let secondsLeft = seconds % 60;
-    minutesLeft =
-      minutesLeft.toString().length === 1 ? "0" + minutesLeft : minutesLeft;
-    secondsLeft =
-      secondsLeft.toString().length === 1 ? "0" + secondsLeft : secondsLeft;
-    return `${hoursLeft}:${minutesLeft}:${secondsLeft}`;
-  };
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  useEffect(() => {
-    // exit early when we reach 0
+    // Output the result in an element with id="demo"
+    setDays(days);
+    setHours(hours);
+    setMins(minutes);
+    setSeconds(seconds);
 
-    if (!timeLeft) return;
-
-    // save intervalId to clear the interval when the
-    // component re-renders
-    const intervalId = setInterval(() => {
-      setTimeLeft(timeLeft - 1);
-    }, 1000);
-    // clear interval on re-render to avoid memory leaks
-
-    return () => clearInterval(intervalId);
-    // add timeLeft as a dependency to re-rerun the effect
-    // when we update it
-  }, [timeLeft]);
+    // If the count down is over, write some text
+    if (distance < 0) {
+      clearInterval(countdownfunction);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
 
   return (
     <div>
-      <h1>{displayTimeLeft(timeLeft)}</h1>
+      {/* <h1>{timeLeft}</h1> */}
+
+      <h1>{`${hours} : ${mins} : ${seconds}`}</h1>
     </div>
   );
 };
