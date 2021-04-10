@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  z-index: 2;
+  background-image: url("https://wallpaperaccess.com/full/1155007.jpg");
 }
 
 .App-logo {
@@ -27,7 +27,7 @@
 
 .App-link {
   color: white;
-  font-weight: Bolder
+  font-weight: Bolder;
 }
 
 @keyframes App-logo-spin {
@@ -73,3 +73,9 @@
   margin: auto;
 }
 
+.banner {
+  height: 250px;
+  width: 300px;
+  background-color: steelblue;
+  border: solid white 2px;
+}
