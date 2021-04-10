@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Dialog.css";
-import Factory from "./svg/factory";
 export default class Dialog extends Component {
   constructor(props) {
     super(props);

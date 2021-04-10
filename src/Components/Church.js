@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Dialog.css";
-import Church from "../Components/svg/church";
 
 export default class Dialog extends Component {
   constructor(props) {

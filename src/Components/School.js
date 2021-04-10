@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import School from "../Components/svg/school";
 import "./Dialog.css";
 
 export default class Dialog extends Component {
