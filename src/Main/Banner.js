@@ -8,7 +8,7 @@ const MainApp = () => {
         <div className="text-gray-300 text-4xl py-2 text-base font-semi-bold">
           Ramadan Countdown Banner
         </div>
-        <div className="h-screen container border flex my-40 justify-center">
+        <div className="h-screen container flex my-40 justify-center">
           <h3 className="mx-20 mt-20 text-gray-400 font-semibold">
             Count down to next Sehri
           </h3>
